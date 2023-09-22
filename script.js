@@ -38,10 +38,10 @@ no.addEventListener("mouseenter", function() {
 no.addEventListener("click", function() {
     switch (currentAction) {
         case 0:
-            no.style.left = "200px";
+            no.style.left = "100px";
             break;
         case 1:
-            no.style.top = "200px";
+            no.style.top = "100px";
             break;
         case 2:
             no.style.left = "0";
