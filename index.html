@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Proposal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+    
+        .heart-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: fall linear infinite;
+        }
+    
+        .heart {
+            position: absolute;
+            color: #FF69B4;
+            font-size: 24px;
+            animation: drift linear infinite;
+        }
+    
+        @keyframes fall {
+            from {
+                transform: translateY(-10%);
+            }
+            to {
+                transform: translateY(100%);
+            }
+        }
+    
+        @keyframes drift {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="whole"> -->
+    <div class="container">
+        <h1>I like you, do you like me?😥</h1>
+        <div class="buttons">
+            <button id="yes">Yes🥰</button>
+
+            <div class="btn-div"> <button id="no">No🥵</button></div>
+           
+        </div>
+    </div>
+    
+  
+     <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>You make me the happiest person in the world!💑</h2>
+            <p>Let's embark on this beautiful journey together.</p>
+        </div>
+    </div>
+<!-- </div> -->
+    <script src="script.js"></script>
+    <script>
+        
+        function createFallingHeart() {
+            const heartElement = document.createElement('div');
+            heartElement.classList.add('heart');
+            heartElement.innerHTML = '&#128150;'; // Heart icon
+
+            const startPosition = Math.random() * 100 + 'vw';
+            heartElement.style.left = startPosition;
+
+            const driftDuration = Math.random() * 1 + 0.5 + 's';
+            heartElement.style.animationDuration = driftDuration;
+
+            document.getElementById('heart-container').appendChild(heartElement);
+
+            setTimeout(() => {
+                heartElement.remove();
+            }, 5000); 
+        }
+
+        setInterval(createFallingHeart, 100);
+
+       
+    </script>
+   
+
+</body>
+</html>
